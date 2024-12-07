@@ -5,6 +5,7 @@ import AddTask from "../components/AddTask"
 import { Spinner, Flex } from "@chakra-ui/react"
 import { ITask } from "../types"
 import  NoTask  from "../components/NoTask"
+import Task from "../components/Task"
 
 
 
@@ -56,6 +57,28 @@ export default function Home() {
   }, [])
 
 
+
+
+
+
+
+const handleCompleteTask = async() => {
+
+}
+
+
+const handleDeleteTask = async() => {
+
+}
+
+
+
+
+
+
+
+
+
   return (
     <>
       <Header />
@@ -68,7 +91,8 @@ export default function Home() {
 
             {allTasks.length > 0 ?
               allTasks.map((individualTask: ITask) => (
-                <p>{individualTask.task}</p>
+                <Task key={individualTask._id} individualTask=
+                {individualTask} handleCompleteTask={handleCompleteTask} handleDeleteTask= {handleDeleteTask} />
               )) : (
                 <NoTask />
               )
