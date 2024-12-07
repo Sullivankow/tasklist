@@ -4,7 +4,7 @@ import { CheckIcon, DeleteIcon } from "@chakra-ui/icons"
 import { TaskProps } from "../types"
 
 
-
+//Implémentation des bouton valider et supprimer à l'aide des composants
 const Task = ({ individualTask, handleCompleteTask, handleDeleteTask }: TaskProps) => {
     return (
         <Card p="2rem" mb="0.5rem" variant="outline">
