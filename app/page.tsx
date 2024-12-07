@@ -4,6 +4,7 @@ import Header from "../components/Header"
 import AddTask from "../components/AddTask"
 import { Spinner, Flex } from "@chakra-ui/react"
 import { ITask } from "../types"
+import  NoTask  from "../components/NoTask"
 
 
 
@@ -69,7 +70,7 @@ export default function Home() {
               allTasks.map((individualTask: ITask) => (
                 <p>{individualTask.task}</p>
               )) : (
-                <p>Pas de tâche</p>
+                <NoTask />
               )
             }
 
