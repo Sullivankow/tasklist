@@ -6,6 +6,7 @@ import { Spinner, Flex } from "@chakra-ui/react"
 import { ITask } from "../types"
 import  NoTask  from "../components/NoTask"
 import Task from "../components/Task"
+import Loading from "../components/Loading"
 
 
 
@@ -84,7 +85,7 @@ const handleDeleteTask = async() => {
       <Header />
       <AddTask task={task} setTask={setTask} handleCreateTask={handleCreateTask} />
       {isLoading ? (
-        <Spinner />
+        <Loading />
       ) : (
         <>
           <Flex direction="column" p="2rem">
