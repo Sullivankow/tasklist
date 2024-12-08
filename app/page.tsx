@@ -68,7 +68,22 @@ const handleCompleteTask = async() => {
 }
 
 
-const handleDeleteTask = async() => {
+const handleDeleteTask = async(id: string) => {
+  try {
+const response = await fetch(`/api/task/delete/${id}`, {
+  method: "DELETE"
+})
+if(response.ok) {
+  setAllTasks((prevTasks) => prevTasks.filter((task: ITask) => task._id !== id))
+}
+else {
+console.log('error')
+}
+
+  }
+  catch(error) {
+    console.log(error)
+  }
 
 }
 
