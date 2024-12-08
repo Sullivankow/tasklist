@@ -16,6 +16,10 @@ export default function Home() {
   const [allTasks, setAllTasks] = useState([])
 
 
+
+
+
+  //Fonction pour ajouter une nouvelle tâche 
   const handleCreateTask = async () => {
     setIsLoading(true)
     try {
@@ -61,12 +65,29 @@ export default function Home() {
 
 
 
+//Fonction pour valider une tâche
 
-
-const handleCompleteTask = async() => {
+const handleCompleteTask = async(id: string) => {
+  try{
+const response = await fetch(`/api/task/complete/${id}`, {
+  method: "PATCH"
+})
+if(response.ok) {
+  await fetchTasks()
+}
+else{
+  console.log("Error completing task")
+}
+  }
+  catch(error) {
+    console.log("error complete task", error)
+  }
 
 }
 
+
+
+//onction pour supprimer une tâche
 
 const handleDeleteTask = async(id: string) => {
   try {
