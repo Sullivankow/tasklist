@@ -11,11 +11,11 @@ export const DELETE = async(request: Request, {params }:
 await connectToDB()
 await Task.findByIdAndDelete(params.id)
 
-return NextResponse.json("Task deleted successfully", { status: 200})
+return new NextResponse("Task deleted successfully", { status: 200})
 
         }
         catch(error){
             console.log(error)
-            return NextResponse.json("Error deleting task", { status: 500})
+            return new NextResponse("Error deleting task", { status: 500})
         }
     }
