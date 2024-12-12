@@ -16,6 +16,6 @@ return NextResponse.json("Task deleted successfully", { status: 200})
         }
         catch(error){
             console.log(error)
-            return NextResponse.json("Error deleting task"), { status: 500}
+            return NextResponse.json("Error deleting task", { status: 500})
         }
     }
