@@ -1,4 +1,4 @@
-import { Flex, Heading, Text, Input, Button } from '@chakra-ui/react'
+import { Flex, Heading, Text,Input,  Button } from '@chakra-ui/react'
 
 const Header = () => {
   return (
@@ -8,7 +8,7 @@ const Header = () => {
   Ma Liste de tâches
 </Heading>
 <Text mt='1rem' className='tasklist-slogan'>
-    TaskList est un outil open source qui vous simplifie votre quotidien en toute efficacité
+    TaskList est un outil open source qui vous simplifie votre quotidien en toute efficacité.
 </Text>
 
     </Flex>
